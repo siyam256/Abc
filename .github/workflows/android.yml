@@ -1,5 +1,5 @@
 
-name: Build Signed Android APK and AAB
+name: Build SlidePrint Release
 
 on:
   push:
@@ -17,20 +17,21 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up JDK 17
+      - name: Set up JDK
         uses: actions/setup-java@v4
         with:
+          distribution: temurin
           java-version: "17"
-          distribution: "temurin"
 
-      - name: Restore signing keystore
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: "8.14"
+
+      - name: Restore signing key
         env:
           KEYSTORE_BASE64: ${{ secrets.UPLOAD_KEYSTORE_BASE64 }}
         run: |
-          test -n "$KEYSTORE_BASE64" || {
-            echo "Keystore secret is missing"
-            exit 1
-          }
           printf '%s' "$KEYSTORE_BASE64" \
             | base64 --decode > "$GITHUB_WORKSPACE/slideprint.jks"
           test -s "$GITHUB_WORKSPACE/slideprint.jks"
@@ -41,8 +42,7 @@ jobs:
           STORE_PASSWORD: ${{ secrets.UPLOAD_STORE_PASSWORD }}
           KEY_PASSWORD: ${{ secrets.UPLOAD_KEY_PASSWORD }}
         run: |
-          chmod +x ./gradlew
-          ./gradlew clean assembleRelease bundleRelease
+          gradle clean assembleRelease bundleRelease
 
       - name: Upload Release files
         uses: actions/upload-artifact@v4
