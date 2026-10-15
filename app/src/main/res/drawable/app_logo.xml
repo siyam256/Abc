@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Default App Logo Drawable.
+    You can replace this file with your own app_logo.png (or app_logo.xml)
+    in app/src/main/res/drawable/ to manually customize the app logo!
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="72dp"
+    android:height="72dp"
+    android:viewportWidth="72"
+    android:viewportHeight="72">
+    <!-- Paper Sheet -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M16,10 L46,10 L56,20 L56,62 A3,3 0 0,1 53,65 L16,65 A3,3 0 0,1 13,62 L13,13 A3,3 0 0,1 16,10 Z" />
+    <!-- Fold Corner -->
+    <path
+        android:fillColor="#DCFCE7"
+        android:pathData="M46,10 L56,20 L46,20 Z" />
+    <!-- Slide 1 -->
+    <path
+        android:fillColor="#15803D"
+        android:pathData="M18,17 h15 v10 h-15 z" />
+    <!-- Slide 2 -->
+    <path
+        android:fillColor="#16A34A"
+        android:pathData="M37,17 h15 v10 h-15 z" />
+    <!-- Slide 3 -->
+    <path
+        android:fillColor="#16A34A"
+        android:pathData="M18,31 h15 v10 h-15 z" />
+    <!-- Slide 4 -->
+    <path
+        android:fillColor="#15803D"
+        android:pathData="M37,31 h15 v10 h-15 z" />
+    <!-- Printer Base -->
+    <path
+        android:fillColor="#22C55E"
+        android:pathData="M20,46 h32 v11 h-32 z" />
+    <path
+        android:fillColor="#14532D"
+        android:pathData="M25,44 h22 v3 h-22 z M25,54 h22 v5 h-22 z" />
+</vector>

@@ -1,63 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="108dp"
-    android:height="108dp"
-    android:viewportWidth="108"
-    android:viewportHeight="108">
-    <!-- Paper Sheet Background -->
-    <path
-        android:fillColor="#FFFFFF"
-        android:pathData="M30,24 L68,24 L78,34 L78,84 A4,4 0,0,1 74,88 L30,88 A4,4 0,0,1 26,84 L26,28 A4,4 0,0,1 30,24 Z" />
-    
-    <!-- Paper Fold Corner -->
-    <path
-        android:fillColor="#DCFCE7"
-        android:pathData="M68,24 L78,34 L68,34 Z" />
-    
-    <!-- Slide 1 (Top Left) -->
-    <path
-        android:fillColor="#15803D"
-        android:pathData="M31,31 h18 v12 h-18 z" />
-    <!-- Slide 1 miniature content bar -->
-    <path
-        android:fillColor="#FFFFFF"
-        android:pathData="M33,34 h10 v1.5 h-10 z M33,37 h14 v1 h-14 z M33,39 h8 v1 h-8 z" />
-
-    <!-- Slide 2 (Top Right) -->
-    <path
-        android:fillColor="#16A34A"
-        android:pathData="M53,31 h18 v12 h-18 z" />
-    <!-- Slide 2 miniature content bar -->
-    <path
-        android:fillColor="#FFFFFF"
-        android:pathData="M55,34 h10 v1.5 h-10 z M55,37 h14 v1 h-14 z M55,39 h8 v1 h-8 z" />
-
-    <!-- Slide 3 (Bottom Left) -->
-    <path
-        android:fillColor="#16A34A"
-        android:pathData="M31,47 h18 v12 h-18 z" />
-    <!-- Slide 3 miniature content bar -->
-    <path
-        android:fillColor="#FFFFFF"
-        android:pathData="M33,50 h10 v1.5 h-10 z M33,53 h14 v1 h-14 z M33,55 h8 v1 h-8 z" />
-
-    <!-- Slide 4 (Bottom Right) -->
-    <path
-        android:fillColor="#15803D"
-        android:pathData="M53,47 h18 v12 h-18 z" />
-    <!-- Slide 4 miniature content bar -->
-    <path
-        android:fillColor="#FFFFFF"
-        android:pathData="M55,50 h10 v1.5 h-10 z M55,53 h14 v1 h-14 z M55,55 h8 v1 h-8 z" />
-
-    <!-- Printer Badge at bottom of page -->
-    <path
-        android:fillColor="#22C55E"
-        android:pathData="M34,65 h34 v12 h-34 z" />
-    <path
-        android:fillColor="#14532D"
-        android:pathData="M40,63 h22 v3 h-22 z M40,74 h22 v5 h-22 z" />
-    <path
-        android:fillColor="#FFFFFF"
-        android:pathData="M42,69 h2 v2 h-2 z" />
-</vector>
+<!--
+    Launcher Foreground Layer.
+    References @drawable/app_logo.
+    To change the app logo manually, replace app/src/main/res/drawable/app_logo.png (or app_logo.xml)!
+-->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:width="66dp"
+        android:height="66dp"
+        android:drawable="@drawable/app_logo"
+        android:gravity="center" />
+</layer-list>

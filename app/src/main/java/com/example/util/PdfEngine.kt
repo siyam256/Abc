@@ -519,7 +519,7 @@ object PdfEngine {
                 }
 
             // Sheet Footer ("Page X of Y • SlidePrint")
-            val footerText = "Sheet ${sheetIndex + 1} of $totalSheetPages  •  SlidePrint N-Up"
+            val footerText = "Sheet ${sheetIndex + 1} of $totalSheetPages  •  SlidePrint"
             val footerWidth = footerPaint.measureText(footerText)
             canvas.drawText(
                 footerText,
