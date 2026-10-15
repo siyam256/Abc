@@ -1,4 +1,4 @@
-name: Build Android APK
+name: Build Android APK and AAB
 
 on:
   push:
@@ -25,18 +25,20 @@ jobs:
     - name: Generate dummy debug keystore
       run: keytool -genkey -v -keystore debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "C=US, O=Android, CN=Android Debug"
 
-    - name: Build Debug APK
+    - name: Build Debug APK and AAB
       run: |
         if [ -f "gradlew" ]; then
-          ./gradlew assembleDebug
+          ./gradlew assembleDebug bundleDebug
         elif [ -d "android" ] && [ -f "android/gradlew" ]; then
-          cd android && ./gradlew assembleDebug
+          cd android && ./gradlew assembleDebug bundleDebug
         else
-          gradle assembleDebug
+          gradle assembleDebug bundleDebug
         fi
 
-    - name: Upload all APKs
+    - name: Upload APK and AAB
       uses: actions/upload-artifact@v4
       with:
-        name: my-android-app
-        path: '**/*.apk'
+        name: my-android-app-builds
+        path: |
+          **/*.apk
+          **/*.aab
