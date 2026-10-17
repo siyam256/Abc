@@ -36,6 +36,12 @@ jobs:
             | base64 --decode > "$GITHUB_WORKSPACE/slideprint.jks"
           test -s "$GITHUB_WORKSPACE/slideprint.jks"
 
+      - name: Find Fragment dependency source
+        run: |
+          gradle :app:dependencyInsight \
+            --dependency androidx.fragment:fragment \
+            --configuration releaseRuntimeClasspath
+
       - name: Build Release APK and AAB
         env:
           KEYSTORE_PATH: ${{ github.workspace }}/slideprint.jks
